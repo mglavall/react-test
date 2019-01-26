@@ -1,10 +1,24 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import CardList from "../components/CardList";
+import * as actionTypes from "../store/actions";
 
 class CardListContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.props.onAddCard("pajaro");
+  }
+
+  editCard = () => {
+    this.props.onEditCard(1, "macaerron");
+  };
   render() {
-    return <CardList />;
+    return (
+      <div>
+        <button onClick={this.editCard}>remove</button>
+        <CardList cards={this.props.cards} />
+      </div>
+    );
   }
 }
 
@@ -14,4 +28,14 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(CardListContainer);
+const mapDispatchToProps = dispatch => {
+  return {
+    onAddCard: title => dispatch({ type: "CREATE_CARD", val: { title } }),
+    onEditCard: (index, title) => dispatch({ type: "EDIT_CARD", val: { title }, index: index })
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CardListContainer);
