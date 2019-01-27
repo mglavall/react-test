@@ -2,12 +2,12 @@ import * as actionTypes from "../actions";
 
 const initialState = {
   cards: [
-    { id: 1, title: "hola1", description: "wtf" },
-    { id: 2, title: "hola1", description: "wtf" },
-    { id: 3, title: "hola1", description: "wtf" },
-    { id: 4, title: "hola1", description: "wtf" },
-    { id: 5, title: "hola1", description: "wtf" },
-    { id: 6, title: "hola1", description: "wtf" }
+    { id: 1, title: "Poor life choices." },
+    { id: 2, title: "Poor life choices." },
+    { id: 3, title: "Winking at old people." },
+    { id: 4, title: "Winking at old people." },
+    { id: 5, title: "Trying to wake up from this nightmare." },
+    { id: 6, title: "Trying to remember what music was" }
   ]
 };
 
