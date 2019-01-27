@@ -16,17 +16,12 @@ class NewCard extends Component {
         <textarea
           type="text"
           rows="4"
-          maxlength="80"
+          maxLength="80"
           value={this.state.cardTitle}
           onChange={this.handleChange.bind(this)}
           name="card"
         />
-        <button
-          className="add-button"
-          onClick={this.props.cardAdded.bind(this, this.state.cardTitle)}
-        >
-          Create card
-        </button>
+        <button onClick={this.props.cardAdded.bind(this, this.state.cardTitle)}>Create card</button>
       </div>
     );
   }

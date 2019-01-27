@@ -4,15 +4,13 @@ import * as actionTypes from "../store/actions";
 import Card from "../components/Card";
 import NewCard from "../components/NewCard";
 
-class CardListContainer extends Component {
-  editCard = () => {
-    this.props.onEditCard(1, "macaerron");
-  };
+class CardContainer extends Component {
   render() {
+    debugger;
     if (this.props.new) {
       return <NewCard cardAdded={this.props.onAddCard} />;
     }
-    return <Card title={this.props.title} />;
+    return <Card title={this.props.title} id={this.props.id} cardEdited={this.props.onEditCard} />;
   }
 }
 
@@ -24,12 +22,12 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAddCard: title => dispatch({ type: "CREATE_CARD", val: { title } }),
-    onEditCard: (index, title) => dispatch({ type: "EDIT_CARD", val: { title }, index: index })
+    onAddCard: title => dispatch({ type: actionTypes.CREATE_CARD, val: { title } }),
+    onEditCard: (id, title) => dispatch({ type: actionTypes.EDIT_CARD, val: { title, id } })
   };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CardListContainer);
+)(CardContainer);

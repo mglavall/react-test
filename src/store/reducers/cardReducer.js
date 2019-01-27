@@ -12,6 +12,7 @@ const initialState = {
 };
 
 const cardReducer = (state = initialState, action) => {
+  debugger;
   switch (action.type) {
     case actionTypes.CREATE_CARD:
       let id = 1;
@@ -20,12 +21,13 @@ const cardReducer = (state = initialState, action) => {
         id = state.cards[state.cards.length - 1].id + 1;
       }
       return { ...state, cards: state.cards.concat({ id, title: action.val.title }) };
+
     case actionTypes.EDIT_CARD:
-      const newCardArray = [...state.cards];
-      if (newCardArray[action.index]) {
-        // Add the new data to the card
-        newCardArray[action.index] = { ...state.cards[action.index], ...action.val };
-      }
+      //If the id exists edit the card title
+      const newCardArray = state.cards.map(el =>
+        el.id === action.val.id ? Object.assign({}, el, { title: action.val.title }) : el
+      );
+
       return { ...state, cards: newCardArray };
   }
   return state;

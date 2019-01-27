@@ -27,8 +27,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onAddCard: title => dispatch({ type: actionTypes.CREATE_CARD, val: { title } }),
-    onEditCard: (index, title) =>
-      dispatch({ type: actionTypes.EDIT_CARD, val: { title }, index: index })
+    onEditCard: (id, title) => dispatch({ type: actionTypes.EDIT_CARD, val: { title, id } })
   };
 };
 

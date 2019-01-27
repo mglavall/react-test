@@ -8,3 +8,22 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #f3f4f8;
 }
+
+button {
+  background-color: white;
+  margin-top: 6px;
+  color: #0069ff;
+  border: none;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  text-decoration: underline;
+}

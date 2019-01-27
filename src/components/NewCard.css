@@ -20,22 +20,3 @@ textarea:focus {
 .flex-col {
   flex-direction: column;
 }
-
-.add-button {
-  background-color: white;
-  margin-top: 6px;
-  color: #0069ff;
-  border: none;
-  padding: 6px;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.add-button:focus {
-  outline: none;
-}
-
-.add-button:hover {
-  text-decoration: underline;
-}
