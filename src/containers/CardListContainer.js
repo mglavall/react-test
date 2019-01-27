@@ -4,11 +4,6 @@ import CardList from "../components/CardList";
 import * as actionTypes from "../store/actions";
 
 class CardListContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.props.onAddCard("pajaro");
-  }
-
   editCard = () => {
     this.props.onEditCard(1, "macaerron");
   };
