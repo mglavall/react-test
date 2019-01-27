@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import CardList from "../components/CardList";
 import * as actionTypes from "../store/actions";
+import "./CardListContainer.css";
 
 class CardListContainer extends Component {
   editCard = () => {
@@ -10,7 +11,7 @@ class CardListContainer extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.editCard}>remove</button>
+        <h1 className="align-center title"> The card game. </h1>
         <CardList cards={this.props.cards} />
       </div>
     );
@@ -25,8 +26,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAddCard: title => dispatch({ type: "CREATE_CARD", val: { title } }),
-    onEditCard: (index, title) => dispatch({ type: "EDIT_CARD", val: { title }, index: index })
+    onAddCard: title => dispatch({ type: actionTypes.CREATE_CARD, val: { title } }),
+    onEditCard: (index, title) =>
+      dispatch({ type: actionTypes.EDIT_CARD, val: { title }, index: index })
   };
 };
 

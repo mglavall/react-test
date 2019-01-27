@@ -1,0 +1,9 @@
+.align-center {
+  text-align: center;
+}
+
+.title {
+  margin-top: 48px;
+  margin-bottom: 64px;
+  color: #0069ff;
+}
