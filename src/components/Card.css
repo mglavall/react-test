@@ -6,3 +6,11 @@
   padding: 16px;
   background-color: white;
 }
+
+.edit-btn {
+  opacity: 0;
+}
+
+.edit-btn.hovered {
+  opacity: 1;
+}

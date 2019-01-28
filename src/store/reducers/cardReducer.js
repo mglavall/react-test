@@ -7,7 +7,7 @@ const initialState = {
     { id: 3, title: "Winking at old people." },
     { id: 4, title: "Winking at old people." },
     { id: 5, title: "Trying to wake up from this nightmare." },
-    { id: 6, title: "Trying to remember what music was" }
+    { id: 6, title: "Trying to remember what music was." }
   ]
 };
 
