@@ -12,7 +12,6 @@ const initialState = {
 };
 
 const cardReducer = (state = initialState, action) => {
-  debugger;
   switch (action.type) {
     case actionTypes.CREATE_CARD:
       let id = 1;
